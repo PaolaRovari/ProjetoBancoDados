@@ -1,0 +1,20 @@
+﻿.titulo {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+.primeiro {
+    margin-left: 25%;
+    font-family: 'Courier New', Courier, monospace;
+}
+.col-sm-10 {
+    margin-left: 50%;
+    margin-bottom: 10%;
+    font-family: 'Courier New', Courier, monospace;
+}
+.titulo2 {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+.obra{
+    text-align:center;
+}

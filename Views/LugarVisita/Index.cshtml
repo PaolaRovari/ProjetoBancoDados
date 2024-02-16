@@ -1,0 +1,42 @@
+﻿@model IEnumerable<ProjetoBancoDados.Models.LugarVisita>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Cadastrar</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Cadastrar Lugar da Visita</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Visita)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lugar)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Visita.DataVisita)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lugar.NomeLugar)
+            </td>
+            <td>
+                    <a asp-action="Edit" asp-route-id="@item.LugarVisitaId" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i></a>
+                    <a asp-action="Details" asp-route-id="@item.LugarVisitaId" class="btn btn-primary"><i class="fa-solid fa-circle-info"></i></a>
+                    <a asp-action="Imprimir" target="_blank" asp-route-id="@item.LugarVisitaId" class="btn btn-primary"><i class="fa-solid fa-print"></i></a>
+                    <a asp-action="Delete" asp-route-id="@item.LugarVisitaId" class="btn btn-segundo"><i class="fa-solid fa-trash-can"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

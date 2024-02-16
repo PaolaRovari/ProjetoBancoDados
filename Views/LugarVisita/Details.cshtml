@@ -1,0 +1,30 @@
+﻿@model ProjetoBancoDados.Models.LugarVisita
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalhes</h1>
+
+<div>
+    <h4>LugarVisita</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Visita)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Visita.DataVisita)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Lugar)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Lugar.NomeLugar)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.LugarVisitaId" class="btn btn-primary">Editar</a>
+    <a asp-action="Index" class="btn btn-primary">Voltar à lista</a>
+</div>

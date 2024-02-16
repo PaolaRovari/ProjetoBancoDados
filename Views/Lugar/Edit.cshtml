@@ -1,0 +1,39 @@
+﻿@model ProjetoBancoDados.Models.Lugar
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Editar</h1>
+
+<h4>Lugar</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="LugarId" />
+            <div class="form-group">
+                <label asp-for="NomeLugar" class="control-label"></label>
+                <input asp-for="NomeLugar" class="form-control" />
+                <span asp-validation-for="NomeLugar" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HorarioFuncionamento" class="control-label"></label>
+                <input asp-for="HorarioFuncionamento" class="form-control" />
+                <span asp-validation-for="HorarioFuncionamento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-primary">Voltar à lista</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

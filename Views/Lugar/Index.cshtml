@@ -1,0 +1,41 @@
+﻿@model IEnumerable<ProjetoBancoDados.Models.Lugar>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Lugar</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Cadastrar Lugar</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeLugar)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HorarioFuncionamento)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeLugar)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HorarioFuncionamento)
+            </td>
+            <td>
+                    <a asp-action="Edit" asp-route-id="@item.LugarId" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i></a>
+                    <a asp-action="Details" asp-route-id="@item.LugarId" class="btn btn-primary"><i class="fa-solid fa-circle-info"></i></a>
+                    <a asp-action="Delete" asp-route-id="@item.LugarId" class="btn btn-segundo"><i class="fa-solid fa-trash-can"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

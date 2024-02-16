@@ -1,0 +1,65 @@
+﻿@model IEnumerable<ProjetoBancoDados.Models.ObraDeArte>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Cadastrar</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Cadastrar Obra de Arte</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeObra)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataCriacaoObra)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TecnicaObra)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValorObra)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Artista)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lugar)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeObra)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataCriacaoObra)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TecnicaObra)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorObra)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Artista.NomeArtista)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lugar.NomeLugar)
+            </td>
+            <td>
+                    <a asp-action="Edit" asp-route-id="@item.ObraDeArteId" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i></a>
+                    <a asp-action="Details" asp-route-id="@item.ObraDeArteId" class="btn btn-primary"><i class="fa-solid fa-circle-info"></i></a>
+                    <a asp-action="Delete" asp-route-id="@item.ObraDeArteId" class="btn btn-segundo"><i class="fa-solid fa-trash-can"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

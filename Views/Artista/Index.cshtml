@@ -1,0 +1,47 @@
+﻿@model IEnumerable<ProjetoBancoDados.Models.Artista>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Artista</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Cadastrar Artista</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeArtista)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NacionalidadeArtista)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataNascimentoFalecimento)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeArtista)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NacionalidadeArtista)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataNascimentoFalecimento)
+            </td>
+            <td>
+                    <a asp-action="Edit" asp-route-id="@item.ArtistaId" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i></a>
+                    <a asp-action="Details" asp-route-id="@item.ArtistaId" class="btn btn-primary"><i class="fa-solid fa-circle-info"></i></a>
+                    <a asp-action="Delete" asp-route-id="@item.ArtistaId" class="btn btn-segundo"><i class="fa-solid fa-trash-can"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

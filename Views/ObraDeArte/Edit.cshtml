@@ -1,0 +1,59 @@
+﻿@model ProjetoBancoDados.Models.ObraDeArte
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Editar</h1>
+
+<h4>Obra de Arte</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ObraDeArteId" />
+            <div class="form-group">
+                <label asp-for="NomeObra" class="control-label"></label>
+                <input asp-for="NomeObra" class="form-control" />
+                <span asp-validation-for="NomeObra" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataCriacaoObra" class="control-label"></label>
+                <input asp-for="DataCriacaoObra" class="form-control" />
+                <span asp-validation-for="DataCriacaoObra" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TecnicaObra" class="control-label"></label>
+                <input asp-for="TecnicaObra" class="form-control" />
+                <span asp-validation-for="TecnicaObra" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ValorObra" class="control-label"></label>
+                <input asp-for="ValorObra" class="form-control" />
+                <span asp-validation-for="ValorObra" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Artista" class="control-label"></label>
+                <select asp-for="ArtistaId" class="form-control" asp-items="ViewBag.ArtistaId"></select>
+                <span asp-validation-for="ArtistaId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Lugar" class="control-label"></label>
+                <select asp-for="LugarId" class="form-control" asp-items="ViewBag.LugarId"></select>
+                <span asp-validation-for="LugarId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-primary">Voltar à lista</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

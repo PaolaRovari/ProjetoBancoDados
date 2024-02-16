@@ -1,0 +1,39 @@
+﻿@model ProjetoBancoDados.Models.Artista
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Deletar</h1>
+
+<h3>tem certeza de que deseja excluir isso?</h3>
+<div>
+    <h4>Artista</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NomeArtista)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NomeArtista)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NacionalidadeArtista)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NacionalidadeArtista)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DataNascimentoFalecimento)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DataNascimentoFalecimento)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ArtistaId" />
+        <input type="submit" value="Deletar" class="btn btn-danger" />
+        <a asp-action="Index" class="btn btn-primary">Voltar à lista</a>
+    </form>
+</div>

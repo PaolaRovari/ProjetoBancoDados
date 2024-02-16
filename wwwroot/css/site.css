@@ -1,0 +1,65 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+.btn-primary {
+    margin: 5px;
+    background: none !important;
+    color: #A57F4B !important;
+    border: 2px #A57F4B solid !important;
+    border-radius: 4px !important;
+    padding: 0.150rem 0.250rem !important;
+}
+
+    .btn-primary:hover {
+        background-color: #A57F4B !important;
+        color: white !important;
+    }
+
+.btn-segundo {
+    margin: 5px;
+    background: none !important;
+    color: #554C39 !important;
+    border: 2px #554C39 solid !important;
+    border-radius: 4px !important;
+    padding: 0.150rem 0.250rem !important;
+}
+
+    .btn-segundo:hover {
+        background-color: #554C39 !important;
+        color: white !important;
+        border: 2px #554C39 solid !important;
+    }
+
+.btn-danger {
+    margin: 5px;
+    background: none !important;
+    color: #A57F4B !important;
+    border: 2px #A57F4B solid !important;
+    border-radius: 4px !important;
+    padding: 0.150rem 0.250rem !important;
+}
+
+    .btn-danger:hover {
+        background-color: #A57F4B !important;
+        color: white !important;
+    }
